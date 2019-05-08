@@ -296,23 +296,6 @@ int GameLoop()
 			return 0;
 	}
 	
-	if(play)
-	{
-		if(!food) //New game starting
-		{
-			srand(clock());
-			food = (rand() % (80 * 25)) + 1;
-			
-			InitSnake();
-			FreshDraw(); //initial draw
-		}
-		
-		else
-		{
-			if(!UpdateSnake())
-				UpdateScreen(); //Only draw if the game should continue
-		}
-	}
 	
 	return 1;
 }

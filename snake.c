@@ -47,18 +47,7 @@ int food = 0;
 void FreshDraw();
 void DrawFood();
 
-void InitSnake()
-{
-	int x, y;
-	
-	for(x = 39, y = 0; y < 2; y++)
-		snake[y] = POINT(x,7-y);	
-		
-	pieces = 2;
-	newpieces = 6;
-	pointtoadd = pointtoerase = 0;
-	direction = DOWN;
-}
+
 
 void GameOver(int Type)
 {
@@ -71,6 +60,14 @@ void GameOver(int Type)
 		case HITWALL:
 			PrintCenteredText("Game Over! You hit a wall!");
 	}
+	
+	food = 0;
+	play = 0;
+	memset(snake, 0, sizeof(int) * 500);
+}
+
+void zGameOver(int Type)
+{
 	
 	food = 0;
 	play = 0;

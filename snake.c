@@ -28,12 +28,6 @@ HANDLE Console;
 
 int GameLoop();
 
-void SetPos(int x, int y)
-{
-	COORD coors = {x, y};
-	
-	SetConsoleCursorPosition(Console, coors);
-}
 
 void PrintCenteredText(char * text)
 {
@@ -299,3 +293,5 @@ int GameLoop()
 	
 	return 1;
 }
+
+testtest

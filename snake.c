@@ -4,26 +4,6 @@
 #include <time.h>
 #include <windows.h>
 
-//Arrow key scan codes
-#define UP_KEY 72
-#define LEFT_KEY 75
-#define DOWN_KEY 80
-#define RIGHT_KEY 77
-
-//Snake movement direction
-#define UP 1
-#define DOWN 2
-#define LEFT 3
-#define RIGHT 4
-
-//Reason for gameover
-#define HITSELF 1
-#define HITWALL 2
-
-#define POINT(x,y) ((y)*80+(x)+1)
-#define GETX(x) (((x)-1)%80)
-#define GETY(x) (((x)-1)/80)
-
 HANDLE Console;
 
 int GameLoop();

@@ -29,42 +29,6 @@ HANDLE Console;
 int GameLoop();
 
 
-void PrintCenteredText(char * text)
-{
-	int i, len = strlen(text);
-	SetPos(40 - (len/2) - 2, 11);
-	printf("%c", 201);
-	for(i = 0; i < len + 2; i++)
-		printf("%c", 205);
-	printf("%c", 187);
-	SetPos(40 - (len/2) - 2, 12);
-	printf("%c ", 186);
-	printf(text);
-	printf(" %c", 186);
-	SetPos(40 - (len/2) - 2, 13);
-	printf("%c", 200);
-	for(i = 0; i < len + 2; i++)
-		printf("%c", 205);
-	printf("%c", 188);
-}
-
-int main(int argc, char * argv[])
-{
-	COORD BufCoors = {80, 25};
-	CONSOLE_CURSOR_INFO CurrInfo = {sizeof(CONSOLE_CURSOR_INFO), 0};
-	
-	Console = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleScreenBufferSize(Console, BufCoors);
-	SetConsoleCursorInfo(Console, &CurrInfo);
-	SetConsoleTitle("Snake");
-
-	PrintCenteredText("Press [enter] to play");
-	
-	while(GameLoop());
-		;
-	
-	return 0;
-}
 
 //==============================================//
 
